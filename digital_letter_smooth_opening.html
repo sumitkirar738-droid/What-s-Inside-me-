@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f4efe7"><title>To Someone I Never Really Got the Chance to Know</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&display=swap');
+:root{--paper:#f7f2e9;--ink:#27251f;--muted:#777064;--accent:#a65c49;--line:#ded4c5;--card:#fffdf8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.75}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.13'/%3E%3C/svg%3E")}
+.wrap{width:min(720px,92vw);margin:auto}.hero{min-height:100svh;display:grid;place-items:center;text-align:center;padding:50px 0}.eyebrow{font:11px/1.4 Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}h1{font-size:clamp(2.6rem,8vw,5.1rem);font-weight:400;line-height:1.06;letter-spacing:-.045em;margin:24px 0}h1 em{color:var(--accent);font-weight:400}.sub{font-size:1rem;color:var(--muted);max-width:400px;margin:0 auto 34px}.btn{font:12px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:15px 21px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer;transition:transform .2s,background .2s}.btn:hover{transform:translateY(-2px);background:var(--accent);border-color:var(--accent)}.scrollhint{margin-top:42px;font:10px Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.letter-invite{appearance:none;border:0;background:transparent;padding:0;margin:8px auto 0;display:flex;flex-direction:column;align-items:center;gap:12px;cursor:pointer;color:var(--ink);font:inherit;position:relative}
+.invite-note{font:10px/1.4 Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);animation:invitePulse 2s ease-in-out infinite}
+.envelope{width:176px;height:116px;display:block;position:relative;filter:drop-shadow(0 13px 12px rgba(58,43,21,.16));transform:translateZ(0);will-change:transform;transition:transform .55s cubic-bezier(.22,1,.36,1),filter .55s ease}
+.letter-invite:hover .envelope{transform:translateY(-5px) rotate(-1deg)}
+.envelope-back{position:absolute;inset:8px 0 0;background:#e9d8bd;border:1px solid #cbb798;border-radius:3px}
+.letter-peek{position:absolute;z-index:1;left:17px;right:17px;top:-7px;height:91px;padding:17px 14px 8px;background:#fffdf5;border:1px solid #d8cbb5;transform:translate3d(0,0,0);will-change:transform;transition:transform 1.15s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;gap:7px}
+.peek-line{display:block;width:85%;height:1px;background:#b7c8d1;opacity:.85}.peek-line.short{width:58%}.peek-sign{margin-top:auto;text-align:right;color:#a65c49;font:italic 11px Georgia,serif}
+.envelope-front{position:absolute;z-index:2;inset:8px 0 0;background:linear-gradient(145deg,#ead7b9,#d9c09b);clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%);border-radius:2px}
+.envelope-flap{position:absolute;z-index:3;top:8px;left:0;width:100%;height:64%;background:#f0dfc4;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:50% 0%;backface-visibility:hidden;transition:transform .8s cubic-bezier(.2,.8,.2,1),opacity .65s ease}
+.wax-seal{position:absolute;z-index:4;left:50%;top:55%;transform:translate(-50%,-50%);width:27px;height:27px;display:grid;place-items:center;border-radius:50%;background:#a65c49;color:#fff3e5;font:18px Georgia,serif;box-shadow:0 2px 4px #6c382c40;transition:opacity .25s ease}
+.invite-caption{font:italic 14px Georgia,serif;color:var(--muted)}
+.letter-invite:focus-visible{outline:2px solid var(--accent);outline-offset:8px;border-radius:4px}
+.hero.letter-opening .envelope-flap{transform:perspective(500px) rotateX(180deg);opacity:.45}
+.hero.letter-opening .letter-peek{transform:translate3d(0,-54px,0)}
+.hero.letter-opening .wax-seal{opacity:0}
+.hero.letter-opening .envelope{animation:envelopeLift 1.45s cubic-bezier(.22,1,.36,1) both;filter:drop-shadow(0 20px 18px rgba(58,43,21,.18))}
+.hero.letter-opening .invite-caption{opacity:0;transition:opacity .25s ease}
+@keyframes invitePulse{0%,100%{opacity:.68}50%{opacity:1}}
+@keyframes envelopeLift{0%{transform:translate3d(0,0,0) scale(1)}38%{transform:translate3d(0,-12px,0) scale(1.035)}72%{transform:translate3d(0,-7px,0) scale(1.015)}100%{transform:translate3d(0,-4px,0) scale(1)}}
+@media(prefers-reduced-motion:reduce){.invite-note{animation:none}.envelope,.letter-peek,.envelope-flap,.wax-seal{transition:none}}
+
+main{padding:0 0 90px}
+.letter{position:relative;isolation:isolate;overflow:hidden;background-color:#fffdf5;background-image:linear-gradient(90deg,transparent 0 42px,rgba(183,91,79,.20) 42px 43px,transparent 43px),repeating-linear-gradient(to bottom,transparent 0 37px,rgba(104,139,164,.22) 37px 38px),linear-gradient(115deg,rgba(255,255,255,.76),rgba(239,229,207,.24));border:1px solid #d8cbb5;border-radius:2px;padding:clamp(30px,6vw,58px) clamp(24px,6vw,58px) clamp(30px,6vw,58px) clamp(54px,8vw,76px);box-shadow:0 3px 5px #3a2b1510,0 18px 40px #3a2b1520,0 38px 80px #3a2b1512;opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.letter:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.16;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paperNoise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paperNoise)' opacity='.20'/%3E%3C/svg%3E")}
+.letter.open{opacity:1;transform:none;transition:opacity 1s cubic-bezier(.22,1,.36,1),transform 1s cubic-bezier(.22,1,.36,1)}.letter h2{font-weight:400;font-size:clamp(1.8rem,5vw,2.5rem);line-height:1.2;margin:0 0 28px}.letter h2 em{color:var(--accent)}p{margin:0 0 20px}.letter .section p,.letter .end p{font-family:'Caveat','Segoe Print','Bradley Hand',cursive;font-size:clamp(1.25rem,2.25vw,1.48rem);font-weight:500;line-height:38px;letter-spacing:.005em;color:#302b27;text-shadow:0 .15px rgba(30,25,20,.2);margin:0 0 0;min-height:38px}.letter .quote{font-family:'Caveat','Segoe Print','Bradley Hand',cursive;font-size:clamp(1.7rem,3.5vw,2.05rem);font-weight:600;line-height:1.3;color:#754737}.letter .section{padding:24px 0;border-top:1px solid rgba(168,148,119,.28)}.section:first-of-type{border-top:0}.smallcap{font:10px Arial,sans-serif;letter-spacing:.17em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}.quote{font-size:1.25rem;line-height:1.5;font-style:italic;padding:8px 0 8px 18px;border-left:2px solid var(--accent);margin:26px 0}.end{text-align:center;padding:50px 0 12px}.end h2{font-size:clamp(2rem,6vw,3rem);font-weight:400;line-height:1.2}.end p{color:var(--muted);max-width:470px;margin:18px auto}.footer{text-align:center;font:10px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:24px 0 0}.hidden{display:none}.reveal{animation:rise .8s both}@keyframes rise{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}.scroll-reveal{opacity:0;transform:translateY(26px);filter:blur(2px);transition:opacity .85s ease,transform .85s cubic-bezier(.2,.7,.2,1),filter .85s ease}.scroll-reveal.is-visible{opacity:1;transform:translateY(0);filter:blur(0)}
+@media(max-width:520px){.letter{background-position:0 0,0 0,0 0;padding-left:50px}.letter .section p,.letter .end p{font-size:1.25rem;line-height:38px;min-height:38px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}.scroll-reveal{opacity:1;transform:none;filter:none}}
+</style>
+</head>
+<body>
+<section class="hero"><div class="wrap"><div class="eyebrow">A note, with no expectations</div><h1>To Someone I<br><em>Never Really Got</em><br>the Chance to Know</h1><p class="sub">Some things are easier to say when they’re written down. Take your time reading this — there’s no rush, and no obligation.</p><button class="letter-invite" id="openBtn" aria-label="Click to open the letter">
+  <span class="invite-note">CLICK TO OPEN LETTER</span>
+  <span class="envelope" aria-hidden="true">
+    <span class="envelope-back"></span>
+    <span class="letter-peek">
+      <span class="peek-line"></span><span class="peek-line short"></span><span class="peek-line"></span>
+      <span class="peek-sign">with care,</span>
+    </span>
+    <span class="envelope-front"></span>
+    <span class="envelope-flap"></span>
+    <span class="wax-seal">♡</span>
+  </span>
+  <span class="invite-caption">a little note, just for you</span>
+</button><div class="scrollhint">A few honest words · just between us</div></div></section>
+<main class="wrap"><article class="letter" id="letter" aria-live="polite">
+<div class="eyebrow">Something I wanted to tell you</div>
+<h2>Hey, <em>you.</em></h2>
+<div class="section"><div class="smallcap">01 — Where it began</div>
+<p>I'm not really sure how to begin this letter.</p>
+<p>I've had so many things on my mind that I've wanted to say to you, but every time I thought about actually saying them, I couldn't find the right words.</p>
+<p>And now, with your last day at the office approaching, I realised that if I leave without expressing them, I might always wonder what would have happened if I'd just been honest once.</p>
+<p>So, here I am, trying to put into words something I've kept to myself for quite a while.</p>
+<p>The truth is, I liked you from the very first day I saw you.</p>
+<p>I know that might sound a little unexpected, especially considering how little we've actually spoken. We never had countless conversations, never really got to know each other, and never built the kind of connection that would make this letter an obvious thing to write.</p>
+<p>But sometimes, you find yourself drawn to someone before you even know their story.</p>
+<p>And for me, that someone was you.</p>
+</div>
+<div class="section"><div class="smallcap">02 — The moments in between</div>
+<p>I still remember our first conversation. It was nice, it felt natural, and we exchanged Instagram that very day. I thought perhaps it could be the beginning of getting to know each other a little better.</p>
+<p>The next day, I asked if we could meet when we were both going to college. You said you'd meet if you were free, but unfortunately, it never happened.</p>
+<p>It was a small thing, really. Something that probably didn't mean much beyond that particular day.</p>
+<p>But after that, we barely spoke.</p>
+<p>I didn't understand why, and honestly, I found myself wondering if I'd done something wrong or made you uncomfortable without realising it.</p>
+<p>I tried to convince myself that I was overthinking things. I tried to focus on my work and let whatever I was feeling fade away.</p>
+<p>At one point, I even unfollowed you on Instagram because I thought that creating some distance would help me move on.</p>
+<p>Looking back, I realise that I was simply trying to make sense of feelings I didn't know what to do with.</p>
+<p>I thought that if I stopped seeing you, perhaps I'd stop thinking about you.</p>
+<p>But feelings don't always disappear just because we decide they should.</p>
+<p>Eventually, I gathered the courage to approach you and ask whether you'd felt uncomfortable when I'd asked you to meet.</p>
+<p>When you told me that you hadn't, and that you appreciated me coming to you and asking directly, I felt genuinely relieved.</p>
+<p>Because the last thing I ever wanted was to make you uncomfortable.</p>
+</div>
+<div class="section"><div class="smallcap">03 — The distance</div>
+<p>After that conversation, I went back to my routine. I worked, focused on my responsibilities, and tried to let things be what they were.</p>
+<p>I never wanted to force a conversation or make you feel that you had to interact with me.</p>
+<p>But if I'm being completely honest, a part of me still hoped that one day we'd talk again.</p>
+<p>Sometimes, all I hoped for was a simple conversation, a small smile when we crossed paths, or just a moment that made things feel a little less distant between us.</p>
+<p>I know these might sound like insignificant things to someone else.</p>
+<p>But when you like someone you barely know, even the smallest possibility of getting to know them can mean something to you.</p>
+<p>And I suppose that was my experience.</p>
+<p>There were days when I'd come to the office hoping that maybe we'd finally have a conversation.</p>
+<p>There were days when I'd tell myself not to expect anything, only to find myself hoping again when I saw you.</p>
+<p>And there were days when I'd wonder whether you even noticed me the way I noticed you.</p>
+<p>I don't say this to make you feel responsible for any of it. These were my feelings, my hopes, and my own little battles with overthinking.</p>
+<p>You never promised me anything, and I never expected you to.</p>
+<p>But I would be lying if I said that the distance between us never hurt.</p>
+<p>Sometimes, I felt confused. Sometimes, I felt disappointed. And sometimes, I wondered if I'd imagined the possibility of us getting to know each other before it had even begun.</p>
+<p>I kept most of those feelings to myself because I understood that you had your own comfort, your own choices, and your own life.</p>
+<p>And respecting that was always more important to me than getting your attention.</p>
+</div>
+<div class="section"><div class="smallcap">04 — Kaizen 7.2</div>
+<p>Then came Kaizen 7.2.</p>
+<p>I saw you there, and honestly, you looked beautiful.</p>
+<p>For a moment, all those feelings I'd been trying to put aside came back.</p>
+<p>I thought that perhaps this was my chance to finally tell you what I'd been wanting to say for so long.</p>
+<p>When I noticed that you seemed a little overwhelmed, I tried to help you get away from the crowd, brought you your bag, and pulled out a chair for you.</p>
+<p>I didn't do those things because I expected anything in return. I simply wanted to help.</p>
+<p>Later, I thought I'd finally tell you how I felt.</p>
+<p>But when you told me that you weren't in a state to understand what I was saying, I stepped back.</p>
+<p>I didn't want to turn that moment into a conversation you weren't ready to have, and I respected that.</p>
+<p>Even then, I left without saying what I'd come so close to saying.</p>
+<p>And now, with my time at this office coming to an end, I've realised that there is something I want to tell you&mdash;not because I expect anything from you, but because I want to be honest with myself and with you.</p>
+</div>
+<div class="section"><div class="smallcap">05 — An ordinary day that meant something to me</div>
+<p>And then came today.</p>
+<p>I'd almost convinced myself that perhaps we'd never really get another chance to talk. With my last day approaching and you deciding to leave the internship, I thought our paths might simply go in different directions without us ever getting to know each other any better.</p>
+<p>But today, while I was sitting in the library and working, you called me over because you needed help with something.</p>
+<p>I helped you sort it out, and we ended up talking. When I asked if I could sit with you, you said yes, and we spent the day sitting together, working on our own tasks, and talking in between.</p>
+<p>We even talked about things beyond work. You shared how you were feeling about the workload and your decision to leave the internship. I tried to understand your perspective, shared what I thought, and ultimately respected your decision because I understood that it was yours to make.</p>
+<p>And when I needed a model for a reel shoot, you helped me arrange one.</p>
+<p>Maybe, for you, it was simply a normal day at the office. Just work, conversations, and helping each other out.</p>
+<p>But for me, it meant more than you might imagine.</p>
+<p>After so many days of wondering whether we'd ever talk properly again, I got to spend a day with you without having to overthink every little interaction.</p>
+<p>There was no grand moment, no dramatic conversation, and no promise of anything more.</p>
+<p>Just you and me, sitting together, doing our work, talking occasionally, and sharing an ordinary day.</p>
+<p>And somehow, that ordinary day made me genuinely happy.</p>
+<p>I don't want to exaggerate what happened today or give it a meaning you never intended it to have. I know that a friendly conversation doesn't necessarily mean anything beyond friendship.</p>
+<p>But it reminded me of something I'd been trying to ignore for a while.</p>
+<p>I still wanted to know you.</p>
+<p>And I realised that if I left without ever telling you how I felt, I'd probably keep wondering about it long after our time at the office had ended.</p>
+</div>
+<div class="section"><div class="smallcap">06 — What I wanted to tell you</div>
+<p>So, here I am, finally saying what I've wanted to say for so long.</p>
+<p>I like you. I have liked you since the first day I saw you, and despite trying to put those feelings aside, they never completely went away.</p>
+<p>I know that liking someone and knowing them are two very different things.</p>
+<p>I don't know your entire story, your dreams, your fears, or the little things that make you who you are.</p>
+<p>I'm not going to pretend that I know you deeply when, in reality, we've barely had the chance to talk.</p>
+<p>But that's precisely why I'd like to get to know you.</p>
+<p>I'd like to know the person behind the face I look forward to seeing at the office.</p>
+<p>I'd like to have conversations that don't end with a greeting or a passing moment.</p>
+<p>I'd like to find out whether we could genuinely enjoy each other's company, whether we'd get along, and whether there might be something worth exploring between us.</p>
+<p>Maybe we would discover that we have a lot in common.</p>
+<p>Maybe we would discover that we're simply different people.</p>
+<p>I don't know what the answer would be, and I'm not asking you to figure that out immediately.</p>
+<p>I'm simply asking whether you'd be open to getting to know me, too.</p>
+<p>There's also something I'd genuinely like to understand.</p>
+<p>Are you already seeing someone? Or is this simply something you don't feel the same way about?</p>
+<p>You don't have to share anything you're uncomfortable sharing, and you don't owe me an explanation for your feelings.</p>
+<p>But if you're comfortable telling me where you stand, I'd appreciate your honesty.</p>
+<p>Even if your answer is no.</p>
+<p>Especially if your answer is no.</p>
+<p>Because as much as I'd like things to turn out differently, I understand that feelings cannot be demanded, negotiated, or earned simply because someone has been carrying them for a long time.</p>
+<p>I don't want you to choose me out of sympathy for what I've felt. I'd only want you to choose me if you genuinely wanted to know me, too.</p>
+<p>If you don't feel the same way, I will respect that.</p>
+<p>I won't ask you to change your mind, and I won't make you feel uncomfortable for being honest with me.</p>
+<p>And if you're open to the possibility of getting to know each other, I'd be happy to start with something as simple as a conversation.</p>
+<p>No promises about what comes next. No expectations that we need to become anything.</p>
+<p>Just a chance to know each other as we actually are, rather than leave everything to assumptions.</p>
+<p>I suppose that's all I've wanted for a while now: not a guaranteed ending, but an honest opportunity.</p>
+</div>
+<div class="section"><div class="smallcap">07 — Before our paths part</div>
+<p>As we are leaving this office for very long, I also want to wish you the very best for everything that lies ahead.</p>
+<p>I hope you achieve the things you're working towards, find opportunities that help you grow, and surround yourself with people who make your life a little brighter.</p>
+<p>I hope life gives you plenty of reasons to smile, and I hope you never have to settle for anything less than the happiness you genuinely deserve.</p>
+<p>I'm glad our paths crossed, even if we never got the chance to know each other the way I once hoped we might.</p>
+<p>And perhaps, in the end, that's what this letter is really about.</p>
+<p>Not asking you to feel something you don't.</p>
+<p>Not trying to turn a few moments into a story they never were.</p>
+<p>Just being honest about something that mattered to me, while giving you the freedom to decide what, if anything, it means to you.</p>
+<p>Some things are worth expressing even when we don't know how they'll be received. And some people are worth being honest with, even when we're not sure we'll ever get the chance to know them.</p>
+<p>You were someone I wanted to know.</p>
+<p>And I didn't want to leave without telling you that.</p>
+</div>
+<div class="section gift-section">
+<p>There's one more thing I wanted to give you.</p>
+<p>It's just a small gift, nothing expensive or extraordinary. I chose it because I wanted you to have something that could remind you of this little chapter of our lives, even after our paths stop crossing every day.</p>
+<p>I know we never really got the chance to know each other the way I once hoped we might. Maybe that's exactly why I wanted to leave you with a small memory of this time.</p>
+<p>I don't want you to feel that this gift comes with any expectations. You don't owe me anything in return, not a reply, not a conversation, and certainly not the same feelings.</p>
+<p>Whether you see me as a friend, a colleague, or simply someone you happened to meet along the way, that's completely okay.</p>
+<p>I just wanted to give you something from my side, with a little sincerity behind it.</p>
+<p>And if, someday, you happen to come across it and remember this phase of your life, even for a moment, I think that would be enough for me.</p>
+<p class="quote">Some moments are brief, but the memories stay.</p></div>
+<div class="end"><div class="eyebrow">With no expectations</div><h2>Take care of <em>yourself.</em></h2><p>And genuinely, all the best for your future.</p><div class="footer">— Someone who wishes he'd gotten the chance to know you better</div></div>
+</article></main>
+<script>
+const btn=document.getElementById('openBtn');const letter=document.getElementById('letter');
+const revealTargets=letter.querySelectorAll('.eyebrow, .letter > h2, .section .smallcap, .section p, .end h2, .end p, .footer');
+revealTargets.forEach(el=>el.classList.add('scroll-reveal'));
+if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}})},{threshold:0.12,rootMargin:'0px 0px -6% 0px'});revealTargets.forEach(el=>observer.observe(el))}else{revealTargets.forEach(el=>el.classList.add('is-visible'))}
+btn.addEventListener('click',()=>{
+  if(btn.disabled) return;
+  const hero=btn.closest('.hero');
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  btn.disabled=true;
+  hero.classList.add('letter-opening');
+  btn.querySelector('.invite-note').textContent='OPENING YOUR LETTER…';
+  const revealLetter=()=>{
+    letter.classList.add('open');
+    letter.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});
+    btn.querySelector('.invite-note').textContent='LETTER OPENED';
+    btn.querySelector('.invite-caption').textContent='a little note, now opened';
+  };
+  if(reduced){revealLetter()}else{window.setTimeout(revealLetter,1150)}
+});
+</script>
+</body></html>
